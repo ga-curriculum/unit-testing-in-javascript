@@ -1,4 +1,4 @@
-# ![[tktk Module Name]](./assets/tktk-hero.png)
+# ![Unit Testing in JavaScript](./assets/tktk-hero.png)
 
 ## About
 
@@ -14,31 +14,21 @@ tktk Write a short but descriptive summary of the content in this module.
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Setup](./setup/README.md)                               | -- | -- | Setting up the development environment  |
-| [Concepts](./concepts/README.md)                         | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-01/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-02/README.md) | -- | -- | tktk skills covered                     |
-| [tktk Microlesson Name](./tktk-microlesson-03/README.md) | -- | -- | tktk skills covered                     |
-| **Total content**                                        | -- | -- |                                         |
+| [Setup](./setup/README.md) | -- | -- | Setting up the development environment  |
+| [Concepts](./concepts/README.md) | -- | -- | tktk skills covered |
+| [Intro to Unit Tests](./intro-to-unit-tests/README.md) | -- | -- | tktk skills covered |
+| [Testing Express Routes](./testing-express-routes/README.md) | -- | -- | tktk skills covered |
 
 ## Level Up content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [tktk Microlesson Name](./tktk-microlesson-04/README.md) | -- | -- | tktk skills covered                     |
+| [Tesing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | tktk skills covered |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References
 
 📖 [Reference Materials](./references/README.md)
-
-## Deployed sites
-
-tktk If there is not a deployed site related to this module this section and all of its content should be removed.
-
-🌐 [Live site](#tktk-deployed-app-url)
-
-🐙 [Repository](#tktk-repository-for-deployed-app)
 
 ## Internal resources
 
