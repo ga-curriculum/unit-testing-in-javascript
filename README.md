@@ -21,7 +21,7 @@ tktk Write a short but descriptive summary of the content in this module.
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Tesing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | tktk skills covered |
+| [Testing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | tktk skills covered |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References
