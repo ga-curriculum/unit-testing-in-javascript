@@ -2,12 +2,10 @@
 
 ## About
 
-tktk Write a short but descriptive summary of the content in this module.
+This module introduces Unit Testing in JavaScript, covering basic unit testing in Mocha/Chai as well as tests for Express routing. 
 
 ## Prerequisites
 
-- tktk
-- tktk
 - tktk
 
 ## Content
@@ -15,15 +13,15 @@ tktk Write a short but descriptive summary of the content in this module.
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
 | [Setup](./setup/README.md) | -- | -- | Setting up the development environment  |
-| [Concepts](./concepts/README.md) | -- | -- | tktk skills covered |
-| [Intro to Unit Tests](./intro-to-unit-tests/README.md) | -- | -- | tktk skills covered |
-| [Testing Express Routes](./testing-express-routes/README.md) | -- | -- | tktk skills covered |
+| [Concepts](./concepts/README.md) | -- | -- | Understanding the importance of Unit Testing |
+| [Intro to Unit Tests](./intro-to-unit-tests/README.md) | -- | -- | Unit Testing in Mocha/Chai |
+| [Testing Express Routes](./testing-express-routes/README.md) | -- | -- | Unit Testing Express routes |
 
 ## Level Up content
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Tesing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | tktk skills covered |
+| [Testing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | Unit Testing a post route in Express |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References

@@ -34,7 +34,7 @@ Unit testing is often associated with two different development methodologies: B
 
 **Behavioral-Driven Development (BDD)**
 
-- **Use of natural language**. Tests are constructed using natural language such as "should" and "expect". The use of natural language makes **focusing on the behavior of the system** easier.
+- **Use of natural language**. Tests are constructed using natural language such as "should" and "expect". The use of natural language makes focusing on the behavior of the system easier.
 - **Integration with specifications**. The tests are closely tied to the requirements of the system. This ensures code is written to meet the requirements of the system.
 - **Focused on behavior**. Tests are written with the desired behavior of the system in mind rather than the implementation details.
 
@@ -46,7 +46,7 @@ Unit testing is often associated with two different development methodologies: B
 
 While both Behavioral-Driven Development (BDD) and Test-Driven Development (TDD) have their own unique approaches, they share the same goal: to ensure that the code meets the requirements of the system and behaves as expected.
 
-> During this module, we will be leaning towards the BDD approach. This is because this is an introductory lesson to be introduced to unit testing. BDD is a more natural way to introduce the concept of unit testing to students. Even though we will be using BDD, you can also apply what you learn here to TDD.
+> During this module, we will be leaning towards the BDD approach as BDD is a more natural way to introduce the concept of unit testing. Even though we will be using BDD, you can also apply what you learn here to TDD.
 
 ## Introducing Mocha and Chai
 

@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - tktk Microlesson Name](./assets/hero.png)
+# ![Unit Testing in JavaScript - Testing Complex Routes](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to write tests for more complex routes in Express.
 
@@ -6,7 +6,7 @@
 
 Since we have already seen how to test a simple route, let's look at how we can test a more complex route. We are still going to be working in the same file, `test/app.test.js`.
  
-Let's now take a look at how we would go about testing a post route. We already have a post route to `users` that we are going to be testing. Just like with our previous tests, we need to use `describe` to group our tests and `it` to declare our test. 
+Let's test a post route. We already have a post route to `users` that we are going to be testing. Just like with our previous tests, we'll use `describe` to group our tests and `it` to declare each test. 
 
 ```js
 // test/app.test.js
@@ -19,7 +19,7 @@ describe('POST /users', () => {
 });
 ```
 
-For this test we want to add a new user to the list of users. Before we can do that we will need a new user to add. 
+For this test we want to add a new user to the list of users. Before we can do that, we'll need a new user to add: 
 
 ```js
 // test/app.test.js
@@ -37,7 +37,7 @@ describe('POST /users', () => {
 });
 ```
 
-Now that we have a new user to add, we can make a request to the server to add the new user. We will be using the same `request` method but this time we will be making a `POST` request. 
+With this `newUser` object created, we can now make a request to the server to add the new user. We will be using the same `request` method but this time we will be making a `POST` request. 
 
 ```js
 // test/app.test.js
@@ -81,7 +81,7 @@ describe('POST /users', () => {
 });
 ```
 
-After we have sent the data to the server it's time to test. Just like with our other tests we want to make sure the respnse is a JSON object and the status code is `200`. 
+After we have sent the data to the server it's time to test. As with our other tests we want to make sure the response is a JSON object and the status code is `200`. 
 
 ```js
 // test/app.test.js
@@ -137,8 +137,9 @@ describe('POST /users', () => {
 });
 ```
 
-Now that we have our test for the POST route, let's run our tests to see if they pass. 
+Now that we have our test for the POST route, we can run our tests to see if they pass. 
 
 ```bash
 npm test
 ```
+

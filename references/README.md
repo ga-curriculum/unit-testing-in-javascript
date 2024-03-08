@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - References](./assets/hero.png)
+# ![Unit Testing in JavaScript - References](./assets/hero.png)
 
 ## Lesson references
 
