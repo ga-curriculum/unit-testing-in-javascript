@@ -1,4 +1,4 @@
-# ![[tktk Module Name] - Setup](./assets/hero.png)
+# ![Unit Testing in JavaScript - Setup](./assets/hero.png)
 
 Open your Terminal application and navigate to your `~/code/ga/lectures` directory:
 
