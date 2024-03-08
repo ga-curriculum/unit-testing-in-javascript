@@ -21,7 +21,7 @@ This module introduces Unit Testing in JavaScript, covering basic unit testing i
 
 | Lesson | Video Time | Video | Skills |
 | ------ |:----------:|:-----:| ------ |
-| [Testing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | tktk skills covered |
+| [Testing More Complex Routes](./testing-complex-routes/README.md) | -- | -- | Unit Testing a post route in Express |
 | **Total Level Up content**                               | -- | -- |                                         |
 
 ## References
