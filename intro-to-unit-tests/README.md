@@ -4,7 +4,7 @@
 
 ## Creating Your First Test
 
-Let's take a look at how we might test a function. In `src/basic-functions`, let's look at the first function: 
+In `src/basic-functions`, let's look at the first function: 
 
 ```js
 function validateEmail(email) {
@@ -13,7 +13,7 @@ function validateEmail(email) {
 }
 ```
 
-This function takes a single argument, provides a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) that checks for the pattern of an email address, and then turns `true` or `false` based on if the provided email matches the pattern or not. 
+This function takes a single argument, provides a [regular expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions) that checks for the pattern of an email address, and then returns `true` or `false` based on if the provided email matches the pattern or not. 
 
 In Mocha, the `it()` function is used to execute tests. The first argument is a string, which is used to describe the test. Then, it accepts a callback function that will execute assertions. 
 
@@ -23,7 +23,11 @@ it('should return true for a valid email', () => {
 });
 ```
 
-Within the callback function, there are two phases. First, any conditions that the test relies upon will be setup. For example, to test the `validateEmail` function, we'll create a new `validEmail` variable and assign it to a string with a valid email format. 
+Within the callback function, there are two phases. 
+
+In the first phase, the function being tested is invoked. 
+
+First, any conditions that the test relies upon will be set up. For example, to test the `validateEmail` function, we'll create a new `validEmail` variable and assign it to a string with a valid email format. 
 
 Next, we pass the test string to `validateEmail`, and assign the result to a variable called `result`.
 
@@ -34,7 +38,7 @@ it('should return true for a valid email', () => {
 });
 ```
 
-Finally, we want to check this `result` against our expected results. We `expect()` the `result` to be `true`. Since `expect` syntax uses chained language, the code is written literally as: `expect(result).to.be.true`
+In the second phase, we check the `result` against our expected results. Given how the function should work, We `expect()` the `result` of passing a valid email to our function to be `true`. Since `expect` syntax uses chained language, the code is written literally as: `expect(result).to.be.true`
 
 ```js
 it('should return true for a valid email', () => {
@@ -232,6 +236,8 @@ Checking the terminal, we should see the following logged:
 <img src="./assets/output.png" />
 
 The `describe()` text logs, with the individual tests displayed underneath. Passing tests will have a green checkmark, failing ones will have a red x. 
+
+Look over the provided tests to get a better sense of how the provided functions have been tested! 
 
 
 
