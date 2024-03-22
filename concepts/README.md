@@ -10,7 +10,7 @@ Unit testing is running tests on small, individual units of code (usually a func
 
 As we build web pages and applications, we frequently want to test our code to ensure it functions as intended. Smaller projects often involve logging some values to the console or checking to see if the correct information is displayed on the screen. 
 
-As our codebase expands and complexity rises, however, we increasingly benefit from more robust testing - does the function work as expected, given a range of inputs? What about any edge cases that could introduce problems into our larger codebase? Being able to test for potential issues with each small part of our code means less time wasted overall trying to chase down tricky bugs. 
+As our codebase expands and complexity rises, we increasingly benefit from more robust testing. Does the function work as expected, given a range of inputs? What about any edge cases that could introduce problems into our larger codebase? Being able to test for potential issues in each small part of our code means less time wasted trying to chase down tricky bugs. 
 
 Let's look at a theoretical example: 
 
@@ -24,9 +24,9 @@ Without thinking about how to test for this in code, let's consider how we'd tes
 
 If `x` is the number `7` and `y` is the number `3`, then we would expect the function to return the number `10`. This would be considered a logic check - does the function perform the correct calculations as intended?
 
-Next, we might wonder about edge cases, or what about if the function doesn't receive the expected data? In this case, the `addTwo` function assumes it will receive numbers. What if `x` is 7 but `y` is `'3'`? Or even `'three'`? What if we only receive a single argument, and y is `undefined`? How does our function handle these types of scenarios? 
+Next, we might wonder about edge cases, or what would happen if the function didn't receive the expected data. In this case, the `addTwo` function assumes it will receive numbers. What if `x` is 7 but `y` is `'3'`? Or even `'three'`? What if we only receive a single argument, and y is `undefined`? How does our function handle these types of scenarios? 
 
-Currently, it doesn't handle them, which reveals some work we can do to improve the function and guard our larger codebase from potential errors. But even without writing an actual Unit Test, we've uncovered some issues with this code unit!
+Currently, it doesn't handle them, which reveals some work we can do to improve the function and guard our larger codebase from potential errors. Even without writing an actual Unit Test, we've uncovered some issues with this code unit!
 
 ## Behavioral-Driven Development (BDD) and Test-Driven Development (TDD)
 

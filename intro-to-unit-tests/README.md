@@ -4,7 +4,7 @@
 
 ## Creating Your First Test
 
-In `src/basic-functions`, let's look at the first function: 
+In `src/basic-function.js`, let's look at the first function: 
 
 ```js
 function validateEmail(email) {
@@ -108,7 +108,7 @@ describe('validatePhoneNumber function', () => {
 
 ## Running Tests and Interpreting Outputs
 
-Before we run our tests, let's add a few more tests for all of our functions. Update `basic-functions.test.js` to the following: 
+Before we run our tests, let's add a few more tests for all of our functions. Update `test/basic-functions.test.js` to the following: 
 
 ```js
 // test/basic-functions.test.js
@@ -238,7 +238,3 @@ Checking the terminal, we should see the following logged:
 The `describe()` text logs, with the individual tests displayed underneath. Passing tests will have a green checkmark, failing ones will have a red x. 
 
 Look over the provided tests to get a better sense of how the provided functions have been tested! 
-
-
-
-
