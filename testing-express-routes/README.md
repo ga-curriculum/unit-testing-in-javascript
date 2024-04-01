@@ -22,7 +22,7 @@ For this lesson, we provided some starter code for an Express application. Let's
 | GET | `/users` | Returns a list of all users |
 | POST | `/users` | Creates a new user |
 
-> Note that there is no connection to a database, yet. If we were to try to run this application and make requests to these endpoints, we would get an error or would not get any data back.
+> Note that there is no connection to a database yet. If we were to try to run this application and make requests to these endpoints, we would get an error or would not get any data back.
 
 This application will be the base for our testing. Let's go!
 
@@ -34,7 +34,7 @@ Before we start writing tests, we need a file to hold these test in. It is best 
 touch test/app.test.js
 ```
 
-Like before, we are going to be using a combination of Mocha and Chai to write our tests. Mocha is our testing framework and we will be using the `expect` syntax from Chai. Let's import the `expect` syntax from Chai.
+Like before, we are going to be using a combination of Mocha and Chai to write our tests. Mocha is our testing framework and we will be using the `expect` syntax from Chai. Let's import the `expect` syntax from Chai into `test/app.test.js`:
 
 ```js
 // test/app.test.js
@@ -155,7 +155,7 @@ before((done) => {
 });
 ```
 
-No before hook is complete without an after hook. We need to disconnect from the database after we are done with our tests. We will use the `after` hook to do this. Add the `after` hook to the bottom of the `app.test.js` file.
+No `before` hook is complete without an `after` hook. We need to disconnect from the database after we are done with our tests. We will use the `after` hook to do this. Add the `after` hook to the bottom of the `app.test.js` file.
 
 ```js
 // test/app.test.js
@@ -179,7 +179,7 @@ We are using the `app.close` method to close the server. We are then using the `
 
 With dropping the database we are ensuring that we are not testing any data that we have in our database. But there is a risk to this - if we use the `dropDatabase` method in a production environment, we will lose all of our data. As a result, we'll need to be careful with this method. Best practice is to never use the database that you are using in production for testing. **Always use a separate database for testing.**
 
-We have set up the before and after hooks. We are now ready to write our tests!
+We have set up the `before` and `after` hooks. We are now ready to write our tests!
 
 ## Testing a Simple Route
 
@@ -202,7 +202,7 @@ const request = require('supertest');
 
 We are now ready to write our test! 
 
-In this test we want to use the `request` method to build a request to our server. First, the `request` method will need to be passed the `app` variable which is our applications listener. Then we will need to choose which type of request we want to send. We can do that by using the `get` method, which accepts a string that will be the path of the request.
+In this test we want to use the `request` method to build a request to our server. First, the `request` method will need to be passed the `app` variable which is our application's listener. Then we will need to choose which type of request we want to send. We can do that by using the `get` method, which accepts a string that will be the path of the request. We'll write this in between the `before` and `after` hook.
 
 ```js
 // test/app.test.js

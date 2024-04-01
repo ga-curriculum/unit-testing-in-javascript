@@ -13,6 +13,11 @@ git clone https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testi
 cd unit-testing-in-javascript-starter-code
 ```
 
+Install the packges:
+```bash
+npm i
+```
+
 Open the contents of your new project directory in VSCode:
 
 ```bash
