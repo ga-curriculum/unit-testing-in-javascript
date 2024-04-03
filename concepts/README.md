@@ -1,52 +1,40 @@
 # ![Unit Testing in JavaScript - Concepts](./assets/hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to understand and explain the importance of unit testing.
+**Learning Objective:** By the end of this lesson, students will be able to explain what unit testing is, why it's useful, and demonstrate basic unit testing in JavaScript using Mocha and Chai.
 
-## What is Unit Testing?
+## Introduction to Unit Testing
 
-Unit testing is running tests on small, individual units of code (usually a function or method) to ensure that they run as expected. The idea is that smaller tests give us a very in-depth look at each piece of a larger puzzle, helping to eliminate bugs that can come about from multiple units of code interacting in unexpected or unplanned ways.
+Unit Testing involves writing code that tests small, individual units of code in a larger codebase (like a function or method) to ensure they perform as expected. The idea is that smaller tests give us a very in-depth look at each piece of a larger puzzle, helping to eliminate bugs that can come about from multiple units of code interacting in unexpected or unplanned ways.
 
-## Why use Unit Testing?
+### Why is Unit Testing Important?
 
-As we build web pages and applications, we frequently want to test our code to ensure it functions as intended. Smaller projects often involve logging some values to the console or checking to see if the correct information is displayed on the screen. 
+Unit tests serve as a reliable source of truth in the dynamic environment of application development. They provide immediate feedback to developers about how their new code impacts other parts of the codebase, ensuring that new features or changes do not disrupt existing functionalities. This becomes increasingly important as codebases grow and become more complex.
 
-As our codebase expands and complexity rises, we increasingly benefit from more robust testing. Does the function work as expected, given a range of inputs? What about any edge cases that could introduce problems into our larger codebase? Being able to test for potential issues in each small part of our code means less time wasted trying to chase down tricky bugs. 
+### Test-Driven Development (TDD)
 
-Let's look at a theoretical example: 
+In TDD, developers write tests before the actual code. Hence the name- Test _Driven_ Development. Developers use a **test-code-refactor** cycle to write their code. Write the tests first, then only write enough code to pass the tests, and then refactor the code without changing the behavior or causing the tests to fail. This ensures that the code is written to meet the requirements of the tests.
 
-```js
-const addTwo = (x,y) => {
-  return x + y
-}
+![TDD Diagram](./assets/originals/tdd-diagram.png)
+
+TDD increases efficiency, as it reduces the time spent on debugging and refactoring. For more info about TDD practices, check out [this TDD article](https://www.spiceworks.com/tech/devops/articles/what-is-tdd/).
+
+## Practical Example in JavaScript
+
+As our codebase grows and becomes more complex, effective testing is key. We need to constantly ask ourselves: does each function work as it should with different inputs? And what about the less obvious, edge cases – could they cause unexpected issues in the larger codebase? By thoroughly testing each small section of our code, we can catch and address potential problems early on. This proactive approach saves us time and hassle in tracking down bugs later.
+
+Consider the function:
+
+```javascript
+const addTwo = (x, y) => {
+  return x + y;
+};
 ```
 
-Without thinking about how to test for this in code, let's consider how we'd test this function logically. 
+To thoroughly test this code, we'd start with basic logic checks. For instance, does it correctly add two numbers? We'd test typical scenarios like `addTwo(2, 3)` and expect the result to be `5`.
 
-If `x` is the number `7` and `y` is the number `3`, then we would expect the function to return the number `10`. This would be considered a logic check - does the function perform the correct calculations as intended?
+But that's just the beginning. We also need to think about edge cases – situations that aren't the usual but are still possible. What if one or both inputs are non-numeric, like `addTwo(2, '3')` or `addTwo('a', 'b')`? How about cases where an argument is missing, like `addTwo(5)`? Should the function handle these scenarios gracefully, maybe by throwing an error or returning a specific value?
 
-Next, we might wonder about edge cases, or what would happen if the function didn't receive the expected data. In this case, the `addTwo` function assumes it will receive numbers. What if `x` is 7 but `y` is `'3'`? Or even `'three'`? What if we only receive a single argument, and y is `undefined`? How does our function handle these types of scenarios? 
-
-Currently, it doesn't handle them, which reveals some work we can do to improve the function and guard our larger codebase from potential errors. Even without writing an actual Unit Test, we've uncovered some issues with this code unit!
-
-## Behavioral-Driven Development (BDD) and Test-Driven Development (TDD)
-
-Unit testing is often associated with two different development methodologies: Behavioral-Driven Development (BDD) and Test-Driven Development (TDD).
-
-**Behavioral-Driven Development (BDD)**
-
-- **Use of natural language**. Tests are constructed using natural language such as "should" and "expect". The use of natural language makes focusing on the behavior of the system easier.
-- **Integration with specifications**. The tests are closely tied to the requirements of the system. This ensures code is written to meet the requirements of the system.
-- **Focused on behavior**. Tests are written with the desired behavior of the system in mind rather than the implementation details.
-
-**Test-Driven Development (TDD)**
-
-- **Focused on code design**. Tests are written before the code is written. Developers use a **test-code-refactor** cycle to write the code. Write the tests first, then only write enough code to pass the tests, and then refactor the code without changing the behavior or failing the tests. This ensures that the code is written to meet the requirements of the tests.
-- **Implementation Details**. Tests focus on individual units of code and their implementation details. These tests are more granular and focus on method signatures and return values.
-- **Incremental Development**. This testing style encourages incremental development, where developers write small, focused tests and code in short iterations.
-
-While both Behavioral-Driven Development (BDD) and Test-Driven Development (TDD) have their own unique approaches, they share the same goal: to ensure that the code meets the requirements of the system and behaves as expected.
-
-> During this module, we will be leaning towards the BDD approach as BDD is a more natural way to introduce the concept of unit testing. Even though we will be using BDD, you can also apply what you learn here to TDD.
+Without even writing a single line of Unit Test, we can identify potential weaknesses in our `addTwo` function. For example, it currently doesn't account for type checking or missing arguments. Recognizing these issues helps us refine the function, ensuring it’s robust and behaves predictably in a variety of scenarios. This level of scrutiny and proactive error handling is what makes unit testing a valuable step in the development process."
 
 ## Introducing Mocha and Chai
 
