@@ -6,19 +6,29 @@ Open your Terminal application and navigate to your `~/code/ga/lectures` directo
 cd ~/code/ga/lectures
 ```
 
-Clone the [Unit Testing in JavaScript Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code) repository, and enter the new directory: 
+Fork the [Unit Testing in JavaScript Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code) repository.
+
+Clone a copy of your remote repo locally by using the `git clone` command:
 
 ```bash
-git clone https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code.git
+git clone https://git.generalassemb.ly/<your-username>/unit-testing-in-javascript-starter-code.git
+```
+
+> 🚨 Do not copy the above command. It will not work. Your GitHub username will replace <github-username> (including the < and >) in the URL above.
+
+Next, `cd` into your new cloned directory, `unit-testing-in-javascript-starter-code`:
+
+```bash
 cd unit-testing-in-javascript-starter-code
 ```
 
-Install the packges:
+Install all dependencies:
+
 ```bash
 npm i
 ```
 
-Open the contents of your new project directory in VSCode:
+Open the project's folder in your code editor:
 
 ```bash
 code .
