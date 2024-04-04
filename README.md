@@ -8,19 +8,19 @@ This module introduces Unit Testing in JavaScript, covering basic unit testing i
 
 - Intro to Node
 
-**For Level Up:** 
+**For Level Up:**
 
 - Intro to Express
 - Intro to Mongoose
 
 ## Content
 
-| Lesson                                                     | Video Time | Video | Skills                                                    |
-| ---------------------------------------------------------- | :--------: | :---: | --------------------------------------------------------- |
-| [Setup](./setup/README.md)                                 |     --     |  --   | Setting up the development environment                    |
-| [Concepts](./concepts/README.md)                           |     --     |  --   | Understanding the importance of Unit Testing              |
-| [A Case for Unit Tests](./a-case-for-unit-tests/README.md) |     --     |  --   | A scenario where unit testing prevents unintended changes |
-| [Intro to Unit Tests](./intro-to-unit-tests/README.md)     |     --     |  --   | Unit Testing in Mocha/Chai                                |
+| Lesson                                                               | Video Time | Video | Skills                                            |
+| -------------------------------------------------------------------- | :--------: | :---: | ------------------------------------------------- |
+| [Setup](./setup/README.md)                                           |     --     |  --   | Setting up the development environment            |
+| [Concepts](./concepts/README.md)                                     |     --     |  --   | Understanding the importance of Unit Testing      |
+| [A Case for Unit Tests](./a-case-for-unit-tests/README.md)           |     --     |  --   | How unit testing prevents unintended code changes |
+| [Unit Tests with Mocha/Chai](./unit-tests-with-mocha-chai/README.md) |     --     |  --   | Writing unit tests with the framework Mocha/Chai  |
 
 ## Level Up content
 

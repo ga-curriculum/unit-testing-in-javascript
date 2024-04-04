@@ -1,10 +1,10 @@
 # ![Unit Testing in JavaScript - Testing Express Routes](./assets/tktk-hero.png)
 
-**Learning objective:** By the end of this lesson, students will be able to write tests for an Express application using Mocha and Chai.
+**Learning objective:** By the end of this lesson, students will be able to write tests for an Express route using Mocha and Chai.
 
 ## Our Express Application
 
-For this lesson, we provided some starter code for an Express application. Let's dive into the code and see what we have.
+For this lesson, we provided some starter code for an Express application. Let's dive into the code and see what has been provided.
 
 **Model**
 
@@ -28,7 +28,7 @@ This application will be the base for our testing. Let's go!
 
 ## Test Setup
 
-Before we start writing tests, we need a file to hold these test in. It is best practice to hold tests in a folder called `test` or `tests`, which is why we've provided one already in the starter code. Inside this folder, create a new file called `app.test.js`.
+Before we start writing tests, we need a file to hold these tests in. It is best practice to hold tests in a folder called `test` or `tests`, which is why we've provided one already in the starter code. Inside this folder, create a new file called `app.test.js`.
 
 ```bash
 touch test/app.test.js
@@ -70,18 +70,19 @@ The benefit of exporting the `app.listen` method is that regardless of how large
 
 ## Before and After Hooks
 
-We are working with a `User` model for this application, and a lot of the tests that you might have to write will be interacting with a database of some kind. The Mocha framework provide us with some hooks we can use to run code before and after our tests. These hooks are called:
+In testing, particularly when dealing with databases, it's important to set up and clean up before and after running tests. Mocha provides special functions, known as hooks, for these tasks:
 
-- `before` - runs once before all tests
-- `beforeEach` - runs before each test
-- `after` - runs once after all tests
-- `afterEach` - runs after each test
+- **before:** Executes once before all the tests in a describe block. Use this for setup tasks that need to happen only once, like establishing a database connection.
+- **beforeEach:** Runs before each test in a describe block. Ideal for setting up the state for each test individually, such as adding test data to a database.
+- **after:** Executes once after all tests in a describe block have run. Use this for cleanup tasks that need to happen only once, such as closing database connections.
+- **afterEach:** Runs after each test in a describe block. Helps in cleaning up after each test, like removing test data from the database.
 
 So why are these important? In the practical sense, we need a way to connect to the database, then disconnect from it. In a larger sense, we also need a way to separate any data that we create for the test from any data that we have in our database. We only want to test the data that we create for the test, NOT the data that we have in our database. We are testing the functionality of our code, not the functionality of our database.
 
-Inside our `app.test.js` file, let's create a `before` and `after` hook. We will use the `before` hook to connect to the database and the `after` hook to disconnect from the database.
+Let’s apply these hooks in the context of testing a `User` model in an application that interacts with a database.
+Inside our `app.test.js` file, we'll create a `before` and `after` hook. We will use the `before` hook to connect to the database and the `after` hook to disconnect from the database.
 
-First import the needed libraries.
+Before writing the hooks, make sure your test file imports the necessary libraries:
 
 ```js
 // test/app.test.js
@@ -103,12 +104,25 @@ We are going to need `dotenv`, `mongoose`, and the `User` model. We also need to
 
 > You will need to add an `.env` file to your project and add the `MONGODB_URI` variable to it.
 
-For our `before` hook, we are going to connect to the database and create a new user. Notice that the `before` hook takes a `done` callback function. This is because we are working with asynchronous code. We will be using the `done` function in order to tell Mocha when we are done with our asynchronous code.
+Next, we add our hooks:
+
+```js
+before(() => {
+  // Connect to the database
+});
+
+// test cases will go here
+
+after(() => {
+  // Disconnect from the database
+});
+```
+
+In our `before` hook, we are going to connect to the database and create a new user. You'll notice that the `before` hook takes a `done` callback function. This is because we are working with asynchronous code. We will be using the `done` function to tell Mocha when we are finished with our asynchronous code.
 
 ```js
 // test/app.test.js
 
-// Add in the before and after hooks
 before((done) => {
   // Connect to the database
   mongoose.connect(process.env.MONGODB_URI);
@@ -161,7 +175,6 @@ No `before` hook is complete without an `after` hook. We need to disconnect from
 ```js
 // test/app.test.js
 
-// Add in the after hook
 after((done) => {
   // On application close
   app.close(() => {
@@ -176,17 +189,26 @@ after((done) => {
 });
 ```
 
-We are using the `app.close` method to close the server. We are then using the `mongoose.connection.db.dropDatabase` method to drop the database, using the `mongoose.connection.close` method to close the database connection, then lastly using the `done` function to tell Mocha that we are done with our asynchronous code.
+In testing our application, it's essential to perform clean-up operations after the tests are completed. This involves shutting down the server using the `app.close` method. Doing so ensures that the server is properly turned off and the resources it was using are freed up. For the database, the process involves two main steps. First, we clear the test database using `mongoose.connection.db.dropDatabase()`. This is like resetting the database, ensuring that each test run begins with a clean state. Following this, we close the database connection with `mongoose.connection.close()`, which is important for preventing open connections that could lead to issues.
 
-With dropping the database we are ensuring that we are not testing any data that we have in our database. But there is a risk to this - if we use the `dropDatabase` method in a production environment, we will lose all of our data. As a result, we'll need to be careful with this method. Best practice is to never use the database that you are using in production for testing. **Always use a separate database for testing.**
+We also use the `done` function in our tests. This function is part of Mocha, our testing framework, and it's used to indicate when asynchronous operations, like database interactions, are completed.
+
+Note: Always be cautious with the `dropDatabase()` command for clearing the database. If this command were accidentally used on a production database, it could result in losing all the data stored there. To avoid such a risk, it’s a best practice to use a distinct database solely for testing. By doing this, we ensure that our actual production data is safe and unaffected by any testing activities. **Always use a separate database for testing.**
 
 We have set up the `before` and `after` hooks. We are now ready to write our tests!
 
-## Testing a Simple Route
+## Testing a route
 
-In our app, we have a GET route that returns a list of all users. Next, we're going to write a test for this route. However we will need one more important item before we can write our test.
+In the starter code, we have been provided a `GET` route that returns a list of all users. Now, we want to write a test for this route to ensure it's working as expected. Before doing so, we need to address how to simulate requests to our server within our tests.
 
-We have imported our `app.listen` method from our `server.js` file, however we have no way of making requests to this listener. Normally we would use an application runner like `nodemon` to start our server but for tests we will need to use a library called `supertest`. `supertest` will allow us to make requests to our server using `request`. It's already installed, so let's import at the top of our `app.test.js` file.
+### Supertest for `http` requests
+
+When running the application, we might typically use a tool like nodemon to start our server. However, for testing purposes, particularly when testing routes, we need a different approach. This is where [supertest](https://www.npmjs.com/package/supertest) comes in.
+
+- **What is it?:** supertest is a library designed for testing Node.js HTTP servers. It allows us to make HTTP requests to our server in a testing environment.
+- **How it Works:** supertest interacts with our server's `app.listen` method, enabling us to simulate client requests (like GET, POST) without having to run the server.
+
+First, we need to import supertest into our test file. Let's add it to our existing imports in `app.test.js`:
 
 ```js
 // test/app.test.js
@@ -203,7 +225,7 @@ const request = require("supertest");
 
 We are now ready to write our test!
 
-In this test we want to use the `request` method to build a request to our server. First, the `request` method will need to be passed the `app` variable which is our application's listener. Then we will need to choose which type of request we want to send. We can do that by using the `get` method, which accepts a string that will be the path of the request. We'll write this in between the `before` and `after` hook.
+In this test we want to use the `request` method to build a request to our server. First, the `request` method will need to be passed the `app` variable which is our application's listener. Then we will need to choose which type of request we want to send. We can do that by using the `get` method, which accepts a string that will be the path of the request. We'll write this in between the `before` and `after` hooks.
 
 ```js
 // test/app.test.js
@@ -235,7 +257,7 @@ describe("GET /users", () => {
 });
 ```
 
-Lastly, we will need to use the `end` method to end the request:
+Next, we will need to use the `end` method to to see the response and end the request/response cycle for the test:
 
 ```js
 // test/app.test.js
@@ -246,29 +268,34 @@ describe("GET /users", () => {
       .get("/users")
       .expect("Content-Type", /json/)
       .expect(200)
-      // Test the response body
       .end((err, res) => {
-        if (err) return done(err);
-        expect(res.body.users).to.be.an("array");
-        res.body.users.forEach((user) => {
-          expect(user).to.have.property("name").that.is.a("string");
-          expect(user).to.have.property("email").that.is.a("string");
-        });
-        // We are done with our asynchronous code
-        done();
+        if (err) {
+          done(err); // Notify Mocha about the error
+        } else {
+          // Test the response body
+          expect(res.body.users).to.be.an("array"); // Expect users to be in an array
+          res.body.users.forEach((user) => {
+            expect(user).to.have.property("name").that.is.a("string");
+            expect(user).to.have.property("email").that.is.a("string");
+          });
+          done(); // Notify Mocha that the test is complete
+        }
       });
   });
 });
 ```
 
-The `end` method will take a callback function which will contain the `err` and `res` parameters. We are using an `if` statement to check if there is an error, in which case we will use the `done` function to tell Mocha that we are done with our asynchronous code.
+- The `end` method will take a callback function which will contain the `err` and `res` parameters.
+- We are using an `if` statement to check if there is an error, in which case we will use the `done` function to tell Mocha that we are done with our asynchronous code.
+- If there is no error we will use the `expect` method to make assertions about the response body. We are expecting the server to return a JSON object with a list of users.
+- These users should have a property of `name` and `email` and they should be strings. We are using the `forEach` method to loop through the `res.body.users` array and make assertions about each user.
 
-If there is no error we will use the `expect` method to make assertions about the response body. We are expecting the server to return a JSON object with a list of users. These users should have a property of `name` and `email` and they should be strings. We are using the `forEach` method to loop through the `res.body.users` array and make assertions about each user.
+Congrats! You have written your first unit test for an express route! Let's run our test to see if it passes.
 
-We have written our first test for our Express application. We can now run our test to see if it passes. In the terminal, run the following command:
+In the terminal, run the following command:
 
 ```bash
 npm test
 ```
 
-Mocha and Chai are a very user friendly testing framework and assertion library. We have only scratched the surface of what we can do with these libraries, but our foundational learnings can be taken away and be applied to large applications.
+Great job! 
