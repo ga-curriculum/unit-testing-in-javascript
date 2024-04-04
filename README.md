@@ -2,7 +2,7 @@
 
 ## About
 
-This module introduces Unit Testing in JavaScript, covering basic unit testing in Mocha/Chai as well as tests for Express routing.
+In this module, we'll explore Unit Testing with JavaScript, focusing on the basics using `Mocha` and `Chai`. You'll gain practical skills in writing tests for both individual units of code and Express routes. Mastering unit testing, a highly sought-after skill in the industry, will boost your ability to ensure code quality and reliability in your projects.
 
 ## Prerequisites
 
