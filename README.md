@@ -28,7 +28,7 @@ In this module, we'll explore Unit Testing with JavaScript, focusing on the basi
 | ----------------------------------------------------------------- | :--------: | :---: | ------------------------------------ |
 | [Testing Express Routes](./testing-express-routes/README.md)      |     --     |  --   | Unit Testing Express routes          |
 | [Testing More Complex Routes](./testing-complex-routes/README.md) |     --     |  --   | Unit Testing a post route in Express |
-| **Total Level Up content**                                        |     --     |  --   |                                      |
+
 
 ## References
 
