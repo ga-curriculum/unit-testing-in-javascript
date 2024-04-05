@@ -14,7 +14,7 @@ Unit tests serve as a reliable source of truth in the dynamic environment of app
 
 In TDD, developers write tests before the actual code. Hence the name- Test _Driven_ Development. Developers use a **test-code-refactor** cycle to write their code. Write the tests first, then only write enough code to pass the tests, and then refactor the code without changing the behavior or causing the tests to fail. This ensures that the code is written to meet the requirements of the tests.
 
-![TDD Diagram](./assets/originals/tdd-diagram.png)
+![TDD Diagram](./assets/tdd.png)
 
 TDD increases efficiency, as it reduces the time spent on debugging and refactoring. For more info about TDD practices, check out [this TDD article](https://www.spiceworks.com/tech/devops/articles/what-is-tdd/).
 
