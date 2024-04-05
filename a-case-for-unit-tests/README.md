@@ -84,7 +84,7 @@ By writing tests _before_ writing your function code, you get to decide how a fu
 
 ### 🎓 You Do: Create a unit test
 
- - Create a third unit test to account for two different data types as parameters?
+ - Create a third unit test to account for two different data types as parameters.
 
 ## Test, Code, Refactor
 
