@@ -1,4 +1,4 @@
-# ![Unit Testing in JavaScript](../assets/tktk-hero.png)
+# ![Unit Testing in JavaScript](../assets/hero.png)
 
 ## About
 

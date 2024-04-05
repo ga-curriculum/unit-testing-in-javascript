@@ -1,4 +1,4 @@
-# ![Testing - A Case for Unit Testing](./assets/herotktk.png)
+# ![Unit Testing in JavaScript - A Case for Unit Tests](./assets/hero.png)
 
 **Learning Objective:** By the end of this lesson, students will be able to describe a scenario where unit testing prevents unintended changes to code.
 

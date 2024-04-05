@@ -1,4 +1,4 @@
-# ![Unit Testing in JavaScript - Intro to Unit Tests](./assets/hero.png)
+# ![Unit Testing in JavaScript - Unit Tests with Mocha/Chai](./assets/hero.png)
 
 **Learning objective:** By the end of this lesson, students will be able to implement unit tests in Mocha Chai.
 
