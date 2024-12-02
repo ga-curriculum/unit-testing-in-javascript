@@ -50,7 +50,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Unit Tests with Mocha Chai",
+          "friendlyName": "Unit Tests with Mocha/Chai",
           "dirName": "unit-tests-with-mocha-chai",
           "type": "Content",
           "skill": "",
@@ -139,7 +139,7 @@
           "estimatedDeliveryTimeInMinutes": 0
         },
         {
-          "friendlyName": "Unit Tests with Mocha Chai",
+          "friendlyName": "Unit Tests with Mocha/Chai",
           "dirName": "unit-tests-with-mocha-chai",
           "type": "Content",
           "skill": "",
