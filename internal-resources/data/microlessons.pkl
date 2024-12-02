@@ -24,7 +24,7 @@ aCaseForUnitTests = new Template.Microlesson {
 }
 
 unitTestsWithMochaChai = new Template.Microlesson {
-  friendlyName = "Unit Tests with Mocha Chai"
+  friendlyName = "Unit Tests with Mocha/Chai"
   dirName = "unit-tests-with-mocha-chai"
   type = "Content"
   videoUrl = ""
