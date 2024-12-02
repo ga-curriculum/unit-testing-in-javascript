@@ -1,4 +1,7 @@
-# ![Unit Testing in JavaScript - Concepts](./assets/hero.png)
+<h1>
+  <span class="headline">Unit Testing in JavaScript</span>
+  <span class="subhead">Concepts</span>
+</h1>
 
 **Learning Objective:** By the end of this lesson, students will be able to explain what unit testing is, why it's useful, and demonstrate basic unit testing in JavaScript using Mocha and Chai.
 

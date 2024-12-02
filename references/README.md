@@ -1,4 +1,7 @@
-# ![Unit Testing in JavaScript - References](./assets/hero.png)
+<h1>
+  <span class="headline">Unit Testing in JavaScript</span>
+  <span class="subhead">References</span>
+</h1>
 
 ## Lesson references
 

@@ -1,4 +1,7 @@
-# ![Unit Testing in JavaScript - Testing Express Routes](./assets/hero.png)
+<h1>
+  <span class="headline">Unit Testing in JavaScript</span>
+  <span class="subhead">Testing Express Routes</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to write tests for an Express route using Mocha and Chai.
 

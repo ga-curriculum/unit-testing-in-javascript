@@ -1,4 +1,7 @@
-# ![Unit Testing in JavaScript - A Case for Unit Tests](./assets/hero.png)
+<h1>
+  <span class="headline">Unit Testing in JavaScript</span>
+  <span class="subhead">A Case for Unit Tests</span>
+</h1>
 
 **Learning Objective:** By the end of this lesson, students will be able to describe a scenario where unit testing prevents unintended changes to code.
 

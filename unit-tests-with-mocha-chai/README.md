@@ -1,4 +1,7 @@
-# ![Unit Testing in JavaScript - Unit Tests with Mocha/Chai](./assets/hero.png)
+<h1>
+  <span class="headline">Unit Testing in JavaScript</span>
+  <span class="subhead">Unit Tests with Mocha Chai</span>
+</h1>
 
 **Learning objective:** By the end of this lesson, students will be able to implement unit tests in Mocha Chai.
 
