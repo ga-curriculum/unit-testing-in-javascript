@@ -38,7 +38,7 @@ In this module, we'll explore Unit Testing with JavaScript, focusing on the basi
 
 ### Starter code
 
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code)
+🟢 [Starter code](https://github.com/ga-curriculum/unit-testing-in-javascript-starter-code)
 
 ### Course landing pages
 
