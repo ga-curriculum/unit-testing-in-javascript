@@ -11,12 +11,12 @@ cd ~/code/ga/lectures
 
 ## Starter Code
 
-This lecture uses the [`Unit Testing in JavaScript Starter Code`](https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code).
+This lecture uses the [`Unit Testing in JavaScript Starter Code`](https://github.com/ga-curriculum/unit-testing-in-javascript-starter-code).
 
-Navigate to [Unit Testing in JavaScript Starter Code](https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code) and clone the repository to your machine:
+Navigate to [Unit Testing in JavaScript Starter Code](https://github.com/ga-curriculum/unit-testing-in-javascript-starter-code) and clone the repository to your machine:
 
 ```bash
-git clone https://git.generalassemb.ly/modular-curriculum-all-courses/unit-testing-in-javascript-starter-code.git unit-testing-in-javascript
+git clone https://github.com/ga-curriculum/unit-testing-in-javascript-starter-code.git unit-testing-in-javascript
 ```
 
 Note by adding the `unit-testing-in-javascript` argument we're cloning the specified repo into a directory called `unit-testing-in-javascript` on our machines.
